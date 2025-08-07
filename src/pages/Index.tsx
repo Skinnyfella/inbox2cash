@@ -14,21 +14,32 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="bg-brand-green text-white py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Email & SMS Marketing Services for Ecommerce Brands
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto">
-            Building high-converting automation systems that generate predictable revenue without bloated retainers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-              Book a call
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-            <Button variant="hero-outline" size="lg" className="text-lg px-8 py-6">
-              Get Your Free Audit
-            </Button>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Text Content */}
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Email & SMS Marketing Services for Ecommerce Brands
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto md:mx-0">
+              Building high-converting automation systems that generate predictable revenue without bloated retainers.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+                Book a call
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+              <Button variant="hero-outline" size="lg" className="text-lg px-8 py-6">
+                Get Your Free Audit
+              </Button>
+            </div>
+          </div>
+          {/* Hero Image */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <img
+              src="/public/background.jpg"
+              alt="Inbox2Cash Hero"
+              className="w-full max-w-md rounded-lg shadow-lg object-cover"
+            />
           </div>
         </div>
       </section>
