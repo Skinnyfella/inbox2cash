@@ -13,116 +13,78 @@ const Process = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Innovation meets strategy, <span className="text-brand-green-light">fueling growth.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto">
-            Helping businesses thrive with innovative digital strategies, creative solutions, and measurable outcomes.
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto font-light">
+            At Inbox2Cash we build direct-line email marketing and SMS marketing systems that put you back in control of your ecommerce revenue. Our proven AMPLIFY™ framework means you see results in months, and every system is built to scale as your ecommerce business grows.
           </p>
         </div>
       </section>
-
-      {/* Two-Column Text Section */}
-      <section className="py-16 px-4">
+{/* Process Intro & 3-Stage Section */}
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-green">
-                Inspiring trust through results and integrity
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Our marketing focus is rooted in creating smart strategies that 
-                  build authentic connections between brands and their audiences.
-                </p>
-                <p>
-                  By combining data-driven insights with creative execution, we deliver 
-                  campaigns that not only capture attention but drive meaningful engagement and growth.
-                </p>
-                <ul className="space-y-2 mt-6">
-                  <li>• Creative for review and global brands</li>
-                  <li>• Built in with marketing strategy</li>
-                  <li>• Results focused approach</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-green">
-                Driving brands forward with strategy & results
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Our team brings together digital strategists, highly-experienced designers that deliver 
-                  strategies and systems that drive businesses to new levels of success.
-                </p>
-                <p>
-                  From comprehensive market analysis to targeted campaign execution, 
-                  we ensure every initiative is aligned with your business objectives and delivers measurable ROI.
-                </p>
-                <ul className="space-y-2 mt-6">
-                  <li>• Top strategic thinking</li>
-                  <li>• Data analysis & insights</li>
-                  <li>• Performance & optimization</li>
-                </ul>
-              </div>
-            </div>
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-brand-green mb-8">
+            The AMPLIFY™ Framework
+          </h2>
+          {/* Intro Text */}
+          <div className="mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              At Inbox2Cash, we deliver measurable results through our systematic AMPLIFY™ methodology. This proven{' '}
+              <span className="font-extrabold text-brand-green">
+                ASSESS &rarr; BUILD &rarr; OPTIMIZE
+              </span>{' '}
+              process ensures immediate returns while building long-term digital marketing success for your business.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* Awards and Recognitions */}
-      <section className="py-16 px-4 bg-brand-green text-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Awards and Recognitions</h2>
-          <p className="text-center text-xl mb-12 opacity-90">
-            Some awards that showcase the quality of everything we do.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Best Digital Marketing Agency", year: "2025", category: "Excellence Award" },
-              { title: "Top SEO Innovation Leader", year: "2024", category: "Innovation Award" },
-              { title: "Most Disruptive Ad Strategy", year: "2024", category: "Innovation Award" },
-              { title: "Excellence in Brand Growth", year: "2023", category: "Growth Award" }
-            ].map((award, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-brand-green-light rounded-full flex items-center justify-center">
-                    <Award size={32} />
-                  </div>
-                  <CardTitle className="text-lg font-bold mb-2">{award.title}</CardTitle>
-                  <p className="text-brand-green-light font-semibold">{award.year}</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-sm opacity-90">{award.category}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Amazing Team */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet our amazing team.</h2>
-          <p className="text-center text-muted-foreground mb-12">
-            We are a team of strategists, designers, and developers passionate about helping businesses grow online.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              { name: "Chris Curtis", role: "Founder & CEO", image: "/placeholder.svg" },
-              { name: "David Rother", role: "Creative Director", image: "/placeholder.svg" }
-            ].map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-24 h-24 bg-brand-green/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-brand-green">{member.name.split(' ').map(n => n[0]).join('')}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-muted-foreground">{member.role}</p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* 3-Stage Process */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* PHASE 1: ASSESS */}
+            <Card className="shadow-lg border-2 border-brand-green">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-brand-green mb-2">PHASE 1: ASSESS <span className="block text-base font-medium text-muted-foreground">Days 1-7</span></CardTitle>
+                <p className="font-semibold mb-2">Strategic Foundation & Performance Analysis</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-4 space-y-2 text-muted-foreground text-base">
+                  <li>Email Marketing Audit: Complete platform analysis and deliverability optimization</li>
+                  <li>SMS Marketing Review: Compliance assessment and subscriber engagement analysis</li>
+                  <li>Customer Journey Mapping: Full touchpoint analysis and optimization opportunities</li>
+                  <li>Competitive Research: Performance benchmarking against your market</li>
+                  <li>Strategic Roadmap: 60-day success plan with clear KPIs and milestones</li>
+                </ul>
+              </CardContent>
+            </Card>
+            {/* PHASE 2: BUILD */}
+            <Card className="shadow-lg border-2 border-brand-green">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-brand-green mb-2">PHASE 2: BUILD <span className="block text-base font-medium text-muted-foreground">Days 7-45</span></CardTitle>
+                <p className="font-semibold mb-2">Campaign Development & Implementation</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-4 space-y-2 text-muted-foreground text-base">
+                  <li>Lead Generation Setup: Optimized sign-up forms and conversion-focused opt-ins</li>
+                  <li>Automation Development: Creation of 8+ high-converting email and SMS workflows</li>
+                  <li>Content Creation: Strategic campaign execution with compelling copy and creative</li>
+                  <li>Cross-Channel Integration: Seamless email and SMS coordination</li>
+                  <li>Performance Tracking: Weekly progress reports and optimization recommendations</li>
+                </ul>
+              </CardContent>
+            </Card>
+            {/* PHASE 3: OPTIMIZE */}
+            <Card className="shadow-lg border-2 border-brand-green">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-brand-green mb-2">PHASE 3: OPTIMIZE <span className="block text-base font-medium text-muted-foreground">Days 45+</span></CardTitle>
+                <p className="font-semibold mb-2">Scaling & Continuous Improvement</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-4 space-y-2 text-muted-foreground text-base">
+                  <li>Campaign Scaling: Strategic expansion of top-performing initiatives</li>
+                  <li>Advanced Testing: Weekly A/B testing across all channels and touchpoints</li>
+                  <li>Strategy Innovation: Implementation of new angles and growth opportunities</li>
+                  <li>Performance Optimization: Data-driven refinements and conversion improvements</li>
+                  <li>Ongoing Reporting: Weekly detailed analytics and strategic recommendations</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

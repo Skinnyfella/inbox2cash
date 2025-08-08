@@ -175,30 +175,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* Additional Results Section */}
-      <section className="py-16 px-4 bg-brand-green text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Awards and Recognitions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Best Digital Marketing Agency", year: "2025" },
-              { title: "Top SEO Innovation Leader", year: "2024" },
-              { title: "Most Disruptive Ad Strategy", year: "2024" },
-              { title: "Excellence in Brand Growth", year: "2023" }
-            ].map((award, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur border-white/20 text-white text-center p-6">
-                <CardContent>
-                  <div className="w-16 h-16 mx-auto mb-4 bg-brand-green-light rounded-full flex items-center justify-center">
-                    <Star size={32} />
-                  </div>
-                  <h3 className="font-bold mb-2">{award.title}</h3>
-                  <p className="text-brand-green-light">{award.year}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-16 px-4">

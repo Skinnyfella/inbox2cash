@@ -24,11 +24,19 @@ const Index = () => {
               Building high-converting automation systems that generate predictable revenue without bloated retainers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 border-2 border-white text-white bg-transparent hover:bg-white hover:text-brand-green transition"
+              >
                 Book a call
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button variant="hero-outline" size="lg" className="text-lg px-8 py-6">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-6 border-2 border-white text-white bg-transparent hover:bg-white hover:text-brand-green transition"
+              >
                 Get Your Free Audit
               </Button>
             </div>
