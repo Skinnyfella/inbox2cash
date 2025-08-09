@@ -25,12 +25,19 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6 border-2 border-white text-white bg-transparent hover:bg-white hover:text-brand-green transition"
               >
-                Book a call
-                <ArrowRight className="ml-2" size={20} />
+                <a
+                  href="https://calendly.com/chebetgloria-inbox2cash/30min?month=2025-08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a call
+                  <ArrowRight className="ml-2" size={20} />
+                </a>
               </Button>
               <Button
                 variant="outline"
