@@ -8,6 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
+const token = import.meta.env.VITE_AIRTABLE_TOKEN;
+const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -17,14 +20,47 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for your interest. We'll get back to you within 24 hours.",
-    });
-    setFormData({ fullName: "", email: "", service: "", requirements: "" });
+
+    try {
+      const res = await fetch(
+        `https://api.airtable.com/v0/${baseId}/Contact`,
+        {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            fields: {
+              "Full Name": formData.fullName,
+              "Email": formData.email,
+              "Service": formData.service,
+              "Requirements": formData.requirements
+            }
+          })
+        }
+      );
+
+      if (res.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your interest. We'll get back to you within 24 hours.",
+        });
+        setFormData({ fullName: "", email: "", service: "", requirements: "" });
+      } else {
+        throw new Error("Failed to send data to Airtable");
+      }
+
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
