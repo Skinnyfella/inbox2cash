@@ -58,7 +58,7 @@ const Index = () => {
           {/* Hero Image */}
           <div className="flex-1 flex justify-center md:justify-end">
             <img
-              src="/public/background.jpg"
+              src="/background.jpg"
               alt="Inbox2Cash Hero"
               className="w-full max-w-md rounded-lg shadow-lg object-cover"
             />
