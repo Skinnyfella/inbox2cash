@@ -18,7 +18,7 @@ const Index = () => {
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Email & SMS Marketing Services for Ecommerce Brands
+              Email & SMS Marketing Solutions for Modern Brands
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto md:mx-0">
               Building high-converting automation systems that generate predictable revenue without bloated retainers.
@@ -66,7 +66,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Brief Overview */}
+  {/* Brief Overview */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -75,28 +75,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services We Offer */}
+  {/* Services We Offer */}
       <section className="py-16 px-4 bg-muted">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services we offer:</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              "Email & SMS Marketing Pro. Automation",
-              "Lifecycle Marketing",
-              "List Marketing Strategy",
-              "Cross Marketing Training & Certification"
-            ].map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{service}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Comprehensive approach with automations and revolutionize how brands connect with their customers creating consistent, reliable results.
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Email & SMS Marketing Plus Automation */}
+            <Card className="border-2 border-brand-green bg-white/50">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  <span role="img" aria-label="email">📧</span>
+                  Email & SMS Marketing Plus Automation.
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  convert prospects into customers and transform one-time buyers into repeat purchasers through strategic timing and compelling messaging
+                </p>
+              </CardContent>
+            </Card>
+            {/* Campaign Strategy */}
+            <Card className="bg-muted">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  <span role="img" aria-label="strategy">📊</span>
+                  Campaign Strategy
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Continuous performance analysis, strategic improvements, and data-driven refinements that consistently increase your email and SMS ROI.
+                </p>
+              </CardContent>
+            </Card>
+            {/* Lifecycle Marketing */}
+            <Card className="bg-muted">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  <span role="img" aria-label="lifecycle">🔄</span>
+                  Lifecycle Marketing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Boost customer lifetime value by 40-60% through integrated email, SMS, and push notification sequences that nurture relationships, prevent churn, and drive repeat purchases at every stage of the customer journey.
+                </p>
+              </CardContent>
+            </Card>
+            {/* Email Marketing Training & Certification */}
+            <Card className="bg-muted">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  <span role="img" aria-label="training">🎓</span>
+                  Email Marketing Training & Certification
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Master email marketing from zero to professional level plus job placement assistance
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -233,7 +272,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Meet Our Amazing Team */}
+  {/* Meet Our Amazing Team */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Meet our amazing team.</h2>
@@ -259,7 +298,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ready to Elevate Your Brand CTA */}
+  {/* Ready to Elevate Your Brand CTA */}
       <section className="py-16 px-4 bg-brand-green text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -276,7 +315,10 @@ const Index = () => {
           </Link>
         </div>
       </section>
-    </Layout>
+  {/* Newsletter Footer Anchor */}
+  <div id="newsletter-footer"></div>
+      </Layout>
+
   );
 };
 

@@ -194,6 +194,8 @@ const CaseStudies = () => {
           </Link>
         </div>
       </section>
+      {/* Newsletter Footer Anchor */}
+      <div id="newsletter-footer"></div>
     </Layout>
   );
 };
