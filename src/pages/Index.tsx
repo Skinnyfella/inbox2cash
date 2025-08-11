@@ -40,11 +40,18 @@ const Index = () => {
                 </a>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6 border-2 border-white text-white bg-transparent hover:bg-white hover:text-brand-green transition"
               >
-                Get Your Free Audit
+                <a
+                  href="https://airtable.com/appsieAMyYGI11NDv/pagvvrgsiszJAf1b5/form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Your Free Audit
+                </a>
               </Button>
             </div>
           </div>

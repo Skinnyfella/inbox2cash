@@ -1,8 +1,67 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+const token = import.meta.env.VITE_AIRTABLE_TOKEN;
+const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        `https://api.airtable.com/v0/${baseId}/newsletter`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fields: {
+              Email: email, // Update this field name if different in your Airtable table
+            },
+          }),
+        }
+      );
+
+      const responseData = await res.json();
+      console.log("Airtable Response:", responseData);
+
+      if (res.ok) {
+        toast({
+          title: "Subscribed successfully!",
+          description: "Thank you for joining our newsletter. You'll receive updates soon!",
+        });
+        setEmail(""); // Clear the input field
+      } else {
+        throw new Error(`Failed to subscribe: ${responseData.error?.message || "Unknown error"}`);
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <footer className="bg-brand-green text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -14,16 +73,23 @@ const Footer = () => {
               Subscribe to our newsletter for the latest marketing insights, 
               trends, and growth strategies for scale your business.
             </p>
-            <div className="flex gap-2">
-              <Input 
-                type="email" 
+            <form onSubmit={handleSubmit} className="flex gap-2">
+              <Input
+                type="email"
                 placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
+                required
               />
-              <Button variant="cta" className="bg-white text-brand-green hover:bg-white/90">
+              <Button
+                type="submit"
+                variant="cta"
+                className="bg-white text-brand-green hover:bg-white/90"
+              >
                 Get Notified
               </Button>
-            </div>
+            </form>
           </div>
 
           {/* Sections Links */}
