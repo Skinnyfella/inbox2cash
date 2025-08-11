@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
@@ -9,7 +10,41 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowRight, CheckCircle, Star, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const TOOL_LIST = [
+  {
+    name: "Airtable",
+  logo: "/logos/Airtable Logo _ SVG _ Real Company _ Alphabet, Letter A Logo.jpg",
+  },
+  {
+    name: "Mailchimp",
+  logo: "/logos/Mailchimp Logo.jpg",
+  },
+  {
+    name: "Klaviyo",
+  logo: "/logos/E-Commerce Marketing Platform Klaviyo Unveils New Logo Design - Logo-Designer_co.jpg",
+  },
+  {
+    name: "Shopify",
+  logo: "/logos/Shopify logo - Canada.jpg",
+  },
+  // Add more tools as needed
+];
+
 const Index = () => {
+  // Optional: Pause animation on hover
+  const marqueeRef = useRef(null);
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+    const handleMouseEnter = () => marquee.style.animationPlayState = "paused";
+    const handleMouseLeave = () => marquee.style.animationPlayState = "running";
+    marquee.addEventListener("mouseenter", handleMouseEnter);
+    marquee.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      marquee.removeEventListener("mouseenter", handleMouseEnter);
+      marquee.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
   return (
     <Layout>
       {/* Hero Section */}
@@ -138,6 +173,49 @@ const Index = () => {
             </Card>
           </div>
         </div>
+
+      </section>
+
+      {/* Tools We Use Carousel */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+            Tools We Use
+          </h2>
+          <div className="overflow-hidden relative">
+            <div
+              ref={marqueeRef}
+              className="flex gap-16 animate-marquee"
+              style={{
+                animation: "marquee 20s linear infinite",
+                width: "max-content",
+              }}
+            >
+              {[...TOOL_LIST, ...TOOL_LIST].map((tool, idx) => (
+                <div key={idx} className="flex flex-col items-center min-w-[120px] mx-4">
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="h-16 w-16 object-contain mb-2"
+                  />
+                  <span className="text-base font-medium text-brand-green">{tool.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Marquee animation style */}
+        <style>
+          {`
+            @keyframes marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+              will-change: transform;
+            }
+          `}
+        </style>
       </section>
 
       {/* Amplify Process & Why Inbox2Cash Stands Out */}
@@ -281,13 +359,21 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Chris Curtis", role: "Founder & CEO", image: "/placeholder.svg" },
-              { name: "David Rother", role: "Creative Director", image: "/placeholder.svg" }
+              { name: "Chris Curtis", role: "Founder & CEO", image: "/team/chris.jpg" },
+              { name: "Chebet Gloria", role: "Co-founder", image: "/chebet.jpg" }
             ].map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-8">
-                  <div className="w-24 h-24 bg-brand-green/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-brand-green">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                  <div className="w-24 h-24 bg-brand-green/10 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                    {member.image && member.image !== "/placeholder.svg" ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    ) : (
+                      <span className="text-2xl font-bold text-brand-green">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                    )}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
                   <p className="text-muted-foreground">{member.role}</p>
