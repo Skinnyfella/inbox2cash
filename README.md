@@ -1,43 +1,76 @@
-# Welcome to your Lovable project
 
-## Project info
+# Inbox2Cash Digital Growth
 
-**URL**: https://lovable.dev/projects/d5a76db1-0014-4119-9cc1-f1e3b743a2a8
+A modern, conversion-focused Email & SMS marketing platform for ecommerce brands. Built with React, Vite, and Tailwind CSS.
 
-## How can I edit this code?
+## Features
+- Hero section with call-to-action buttons
+- Responsive design
+- Services overview
+- Amplify process and success metrics
+- Case studies and testimonials
+- FAQ section
+- Contact form integrated with Airtable
+- Environment variables for secure API keys/tokens
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm or yarn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d5a76db1-0014-4119-9cc1-f1e3b743a2a8) and start prompting.
+### Installation
+1. Clone the repository:
+	```bash
+	git clone https://github.com/Skinnyfella/inbox2cash-digital-growth.git
+	cd inbox2cash-digital-growth
+	```
+2. Install dependencies:
+	```bash
+	npm install
+	# or
+	yarn install
+	```
+3. Create a `.env.local` file in the root directory and add your environment variables:
+	```env
+	VITE_AIRTABLE_TOKEN=your_airtable_token
+	VITE_AIRTABLE_BASE_ID=your_airtable_base_id
+	```
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development
+Start the local development server:
+```bash
 npm run dev
+# or
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+### Building for Production
+```bash
+npm run build
+# or
 
+```
+
+### Deployment
+This project is ready for deployment on Vercel. All routes are handled for client-side navigation.
+
+1. Push your code to GitHub.
+2. Connect your repo to Vercel (https://vercel.com/import).
+3. Add your environment variables in the Vercel dashboard.
+4. Deploy!
+
+## Folder Structure
+- `src/pages/` — Main pages (Index, Contact, Process, etc.)
+- `src/components/` — Reusable UI components
+- `public/` — Static assets
+
+## Security
+- `.env.local` and all `.env*` files are gitignored by default.
+- No secrets or tokens are committed to the repository.
+
+## License
+MIT
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
