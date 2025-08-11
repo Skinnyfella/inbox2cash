@@ -22,8 +22,8 @@ A modern, conversion-focused Email & SMS marketing platform for ecommerce brands
 ### Installation
 1. Clone the repository:
 	```bash
-	git clone https://github.com/Skinnyfella/inbox2cash-digital-growth.git
-	cd inbox2cash-digital-growth
+	git clone https://github.com/Skinnyfella/inbox2cash.git
+	cd inbox2cash
 	```
 2. Install dependencies:
 	```bash

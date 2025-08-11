@@ -116,7 +116,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services we offer:</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Email & SMS Marketing Plus Automation */}
-            <Card className="border-2 border-brand-green bg-white/50">
+            <Card className="border rounded-xl p-6 h-full flex flex-col justify-between transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   <span role="img" aria-label="email">📧</span>
@@ -130,7 +130,7 @@ const Index = () => {
               </CardContent>
             </Card>
             {/* Campaign Strategy */}
-            <Card className="bg-muted">
+            <Card className="border rounded-xl p-6 h-full flex flex-col justify-between transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   <span role="img" aria-label="strategy">📊</span>
@@ -144,7 +144,7 @@ const Index = () => {
               </CardContent>
             </Card>
             {/* Lifecycle Marketing */}
-            <Card className="bg-muted">
+            <Card className="border rounded-xl p-6 h-full flex flex-col justify-between transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   <span role="img" aria-label="lifecycle">🔄</span>
@@ -158,7 +158,7 @@ const Index = () => {
               </CardContent>
             </Card>
             {/* Email Marketing Training & Certification */}
-            <Card className="bg-muted">
+            <Card className="border rounded-xl p-6 h-full flex flex-col justify-between transition-shadow hover:shadow-lg">
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   <span role="img" aria-label="training">🎓</span>
