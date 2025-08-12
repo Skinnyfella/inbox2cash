@@ -24,8 +24,20 @@ const TOOL_LIST = [
   logo: "/logos/E-Commerce Marketing Platform Klaviyo Unveils New Logo Design - Logo-Designer_co.jpg",
   },
   {
-    name: "Shopify",
-  logo: "/logos/Shopify logo - Canada.jpg",
+    name: "Braze",
+  logo: "/logos/braze.png",
+  },
+   {
+    name: "Omnisend",
+  logo: "/logos/ominisend.png",
+  },
+  {
+    name: "Mailerlite",
+  logo: "/logos/mailerlite.png",
+  },
+  {
+    name: "Apollo io",
+  logo: "/logos/apollo.png",
   },
   // Add more tools as needed
 ];
@@ -246,41 +258,60 @@ const Index = () => {
           {/* Why Inbox2Cash Stands Out */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Inbox2Cash Stands Out</h2>
-            <p className="text-center text-xl mb-8 opacity-90">
-              We're more than email marketing agencies, we're strategy, and growth accelerator specialists.
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold mb-4">Our Approach</h3>
-                <div className="space-y-3">
-                  {[
-                    "Data-driven marketing strategy development",
-                    "Comprehensive competitive analysis",
-                    "Minimal your business support for guidance",
-                    "Performance marketing expertise"
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="text-brand-green-light mt-1" size={20} />
-                      <span className="opacity-90">{item}</span>
-                    </div>
-                  ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Others Agencies */}
+              <div className="bg-[#153c3c] rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold mb-8 text-center">Others Agencies</h3>
+                <ul className="space-y-8">
+                  <li className="flex items-center gap-5 text-lg md:text-xl">
+                    <span className="text-gray-300 text-4xl">✖️</span>
+                    <span>Generic, one-size-fits-all strategies</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl">
+                    <span className="text-gray-300 text-4xl">✖️</span>
+                    <span>Focus on vanity metrics (likes, shares)</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl">
+                    <span className="text-gray-300 text-4xl">✖️</span>
+                    <span>Slow response times and poor communication</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl">
+                    <span className="text-gray-300 text-4xl">✖️</span>
+                    <span>Minimal post-launch support or guidance</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl">
+                    <span className="text-gray-300 text-4xl">✖️</span>
+                    <span>Use outdated marketing techniques</span>
+                  </li>
+                </ul>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold mb-4">Approach</h3>
-                <div className="space-y-3">
-                  {[
-                    "Conversion rates growth within 30-90 days",
-                    "Weekly performance reviews and optimizations",
-                    "Ready performance reports and realizations",
-                    "High converting email designs"
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Star className="text-brand-green-light mt-1" size={20} />
-                      <span className="opacity-90">{item}</span>
-                    </div>
-                  ))}
-                </div>
+              {/* Inbox2Cash */}
+              <div className="bg-[#153c3c] rounded-2xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
+                  <span className="text-green-400 text-3xl">✔️</span> Inbox2Cash
+                </h3>
+                <ul className="space-y-8">
+                  <li className="flex items-center gap-5 text-lg md:text-xl font-semibold">
+                    <span className="text-green-400 text-4xl">✔️</span>
+                    <span>Measurable revenue growth within first 60 days</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl font-semibold">
+                    <span className="text-green-400 text-4xl">✔️</span>
+                    <span>Custom strategies for your specific industry</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl font-semibold">
+                    <span className="text-green-400 text-4xl">✔️</span>
+                    <span>Dedicated ecommerce email marketing strategist</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl font-semibold">
+                    <span className="text-green-400 text-4xl">✔️</span>
+                    <span>Weekly performance reports and optimization</span>
+                  </li>
+                  <li className="flex items-center gap-5 text-lg md:text-xl font-semibold">
+                    <span className="text-green-400 text-4xl">✔️</span>
+                    <span>High-converting email designs</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -359,7 +390,7 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Shotala Benjamin", role: "Founder & CEO", image: "/team/chris.jpg" },
+              { name: "Shotala Benjamin", role: "Founder & CEO", image: "/Ben.jpg" },
               { name: "Chebet Gloria", role: "Co-founder", image: "/chebet.jpg" }
             ].map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
