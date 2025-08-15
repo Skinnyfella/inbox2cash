@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -44,20 +43,20 @@ const App = () => {
               <DialogTitle>Subscribe to our Newsletter?</DialogTitle>
             </DialogHeader>
             <p className="mb-4">Would you like to receive the latest marketing insights and updates?</p>
-            <DialogFooter>
-              <button
-                className="bg-brand-green text-white px-4 py-2 rounded hover:bg-brand-green-light transition"
-                onClick={handleSubscribeClick}
-              >
-                Yes, subscribe me
-              </button>
-              <button
-                className="bg-muted text-brand-green px-4 py-2 rounded border border-brand-green hover:bg-brand-green hover:text-white transition"
-                onClick={() => setOpen(false)}
-              >
-                No, thanks
-              </button>
-            </DialogFooter>
+              <div className="flex flex-col gap-4 mt-8 sm:flex-row w-full">
+                <button
+                  className="w-full sm:w-auto px-6 py-3 bg-brand-green text-white font-semibold rounded border border-brand-green hover:bg-brand-green/90 transition"
+                  onClick={handleSubscribeClick}
+                >
+                  Yes, subscribe me
+                </button>
+                <button
+                  className="w-full sm:w-auto px-6 py-3 bg-white text-brand-green font-semibold rounded border border-brand-green hover:bg-brand-green/10 transition"
+                  onClick={() => setOpen(false)}
+                >
+                  No, thanks
+                </button>
+              </div>
           </DialogContent>
         </Dialog>
         <BrowserRouter>
