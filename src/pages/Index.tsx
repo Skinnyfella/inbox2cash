@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, CheckCircle, Star, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const TOOL_LIST = [
   {
@@ -42,6 +43,15 @@ const TOOL_LIST = [
   // Add more tools as needed
 ];
 
+const HERO_IMAGES = [
+  "/background.jpg",
+  "/background1.jpg",
+  "/background2.jpg",
+  "/background3.jpg",
+  "/background4.jpg",
+  "/background5.jpg"
+];
+
 const Index = () => {
   // Optional: Pause animation on hover
   const marqueeRef = useRef(null);
@@ -57,6 +67,16 @@ const Index = () => {
       marquee.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
+
+  // Slideshow logic for hero image
+  const [heroImgIdx, setHeroImgIdx] = React.useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroImgIdx(idx => (idx + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -102,12 +122,13 @@ const Index = () => {
               </Button>
             </div>
           </div>
-          {/* Hero Image */}
+          {/* Hero Image - Slideshow */}
           <div className="flex-1 flex justify-center md:justify-end">
             <img
-              src="/background.jpg"
+              src={HERO_IMAGES[heroImgIdx]}
               alt="Inbox2Cash Hero"
-              className="w-full max-w-md rounded-lg shadow-lg object-cover"
+              className="w-full max-w-md rounded-lg shadow-lg object-cover transition-all duration-700"
+              key={HERO_IMAGES[heroImgIdx]}
             />
           </div>
         </div>
