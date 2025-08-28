@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Instagram, Twitter, Linkedin } from "lucide-react"; // 👈 social icons
+import { Instagram, Linkedin } from "lucide-react"; // icons from lucide
 
 const token = import.meta.env.VITE_AIRTABLE_TOKEN;
 const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
@@ -123,31 +123,34 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 mt-8">
-          <a
-            href="https://www.instagram.com/inbox2cash?igsh=MW42NTBiYTdpaHZ2Mw=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-200 transition-colors"
-          >
-            <Instagram size={22} />
-          </a>
-          <a
-            href="https://x.com/Inbox2Cash"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-200 transition-colors"
-          >
-            <Twitter size={22} />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/inbox2cash/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-200 transition-colors"
-          >
-            <Linkedin size={22} />
-          </a>
-        </div>
+  <a
+    href="https://www.instagram.com/inbox2cash?igsh=MW42NTBiYTdpaHZ2Mw=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80 transition-opacity"
+  >
+    <img src="/instagram.svg" alt="Instagram" className="w-7 h-7 md:w-8 md:h-8" />
+  </a>
+
+  <a
+    href="https://x.com/Inbox2Cash"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80 transition-opacity"
+  >
+    <img src="/x-logo.svg" alt="X (Twitter)" className="w-7 h-7 md:w-8 md:h-8" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/inbox2cash/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:opacity-80 transition-opacity"
+  >
+    <img src="/linkedin.svg" alt="LinkedIn" className="w-7 h-7 md:w-8 md:h-8" />
+  </a>
+</div>
+
 
         {/* Copyright */}
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
