@@ -437,13 +437,13 @@ const Index = () => {
       </section>
 
   {/* Ready to Elevate Your Brand CTA */}
-      <section className="py-16 px-4 bg-brand-green text-white">
+         <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to elevate your brand and unlock new growth?
+            Ready to elevate your brand? Book a call.
           </h2>
-          <p className="text-xl mb-8 opacity-90">
-            We'd love to hear from you! Fill out the form below, and let's discuss how we can help you achieve your goals.
+          <p className="text-xl text-muted-foreground mb-8">
+            Join the growing list of successful brands that have transformed their marketing with our proven strategies.
           </p>
           <Link to="/contact">
             <Button variant="cta" size="lg" className="text-lg px-8 py-6">
@@ -453,8 +453,8 @@ const Index = () => {
           </Link>
         </div>
       </section>
-  {/* Newsletter Footer Anchor */}
-  <div id="newsletter-footer"></div>
+      {/* Newsletter Footer Anchor */}
+      <div id="newsletter-footer"></div>
       </Layout>
 
   );
