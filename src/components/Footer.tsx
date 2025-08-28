@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Instagram, Twitter, Linkedin } from "lucide-react"; // 👈 social icons
 
 const token = import.meta.env.VITE_AIRTABLE_TOKEN;
 const baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
@@ -34,7 +35,7 @@ const Footer = () => {
           },
           body: JSON.stringify({
             fields: {
-              Email: email, // Update this field name if different in your Airtable table
+              Email: email,
             },
           }),
         }
@@ -48,7 +49,7 @@ const Footer = () => {
           title: "Subscribed successfully!",
           description: "Thank you for joining our newsletter. You'll receive updates soon!",
         });
-        setEmail(""); // Clear the input field
+        setEmail(""); 
       } else {
         throw new Error(`Failed to subscribe: ${responseData.error?.message || "Unknown error"}`);
       }
@@ -118,6 +119,34 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex justify-center space-x-6 mt-8">
+          <a
+            href="https://www.instagram.com/inbox2cash?igsh=MW42NTBiYTdpaHZ2Mw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-200 transition-colors"
+          >
+            <Instagram size={22} />
+          </a>
+          <a
+            href="https://x.com/Inbox2Cash"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-200 transition-colors"
+          >
+            <Twitter size={22} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/inbox2cash/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-200 transition-colors"
+          >
+            <Linkedin size={22} />
+          </a>
         </div>
 
         {/* Copyright */}
