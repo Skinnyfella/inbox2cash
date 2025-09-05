@@ -66,15 +66,15 @@ export default function Footer() {
   return (
     <footer className="bg-brand-green text-white py-10 px-6 md:px-20">
       {/* 3 Equal Columns */}
-      <div className="max-w-7xl mx-auto ml-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
         {/* Left Section - Logo */}
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-xs text-left">
-            <h2 className="text-2xl font-bold text-left">Inbox2cash</h2>
-            <p className="mt-4 text-white/80 text-left">
+          <div className="w-full max-w-xs text-center md:text-left">
+            <h2 className="text-2xl font-bold text-center md:text-left">Inbox2cash</h2>
+            <p className="mt-4 text-white/80 text-center md:text-left">
               Building email that empower businesses to grow and scale.
             </p>
-            <div className="flex space-x-4 mt-6 justify-start">
+            <div className="flex space-x-4 mt-6 justify-center md:justify-start">
               <a href="https://www.instagram.com/inbox2cash?igsh=MW42NTBiYTdpaHZ2Mw==" className="text-white hover:text-white/70 transition">
                 <img src="/instagram.svg" alt="Instagram" className="w-6 h-6" />
               </a>
@@ -89,7 +89,7 @@ export default function Footer() {
         </div>
 
         {/* Middle Section - Sections */}
-        <div className="flex flex-col items-center -ml-12">
+        <div className="flex flex-col items-center">
           <h3 className="text-lg font-semibold mb-4">Sections</h3>
           <ul className="space-y-2 text-white/80">
             <li>
@@ -138,7 +138,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="mt-10 border-t border-white/20 pt-6 text-center text-white/80 text-sm">
-        © {new Date().getFullYear()} Your Company. All rights reserved.
+        © 2024 Your Company. All rights reserved.
       </div>
     </footer>
   );
