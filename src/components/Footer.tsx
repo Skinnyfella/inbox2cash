@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="w-full max-w-xs text-center md:text-left">
             <h2 className="text-2xl font-bold text-center md:text-left">Inbox2cash</h2>
             <p className="mt-4 text-white/80 text-center md:text-left">
-              Building email that empower businesses to grow and scale.
+              Building emails that empower businesses to grow and scale.
             </p>
             <div className="flex space-x-4 mt-6 justify-center md:justify-start">
               <a href="https://www.instagram.com/inbox2cash?igsh=MW42NTBiYTdpaHZ2Mw==" className="text-white hover:text-white/70 transition">
